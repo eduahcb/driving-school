@@ -4,6 +4,8 @@ import styled, { css } from 'styled-components'
 
 import { BreakpointSize, breakAt } from 'styles/BreakPoints'
 
+const colorYellow = '#ffc107'
+
 const Root = styled.div`
   color: #fff;
   padding: 100px 0;
@@ -31,30 +33,7 @@ const Container = styled.div`
   }
 `
 
-// const Title = styled.h1`
-//   position: relative;
-//   font-weight: 700;
-//   letter-spacing: 2px;
-//   margin-bottom: 25px;
-//   padding-bottom: 25px;
-//   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     bottom: -3px;
-//     left: 0;
-//     background-color: ${colorYellow};
-//     height: 5px;
-//     width: 70px;
-//   }
-
-//   strong {
-//     color: ${colorYellow};
-//   }
-// `
-
-const Content = styled.h1`
+const Content = styled.div`
   p,
   li {
     font-size: 20px;
