@@ -42,7 +42,8 @@
       "!src/**/*.stories.js",
       "!src/serviceWorker.js",
       "!src/index.js",
-      "!src/reportWebVitals.js"
+      "!src/reportWebVitals.js",
+      "!src/styles/GlobalStyle.js"
     ]
   },
   "browserslist": {
@@ -76,6 +77,7 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-storybook": "^0.5.7",
     "jest-styled-components": "^7.0.8",
+    "react-helmet": "^6.1.0",
     "styled-components": "^5.3.3",
     "webpack": "^5.69.1"
   }
