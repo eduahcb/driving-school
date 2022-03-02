@@ -1,12 +1,12 @@
+import React from 'react'
 import { createGlobalStyle } from 'styled-components'
+import { Helmet } from 'react-helmet'
 
 import { BreakpointSize, breakAt } from './BreakPoints'
 
 const colorYellow = '#ffc107'
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap');
-
   html {
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -86,4 +86,15 @@ const GlobalStyle = createGlobalStyle`
 
 `
 
-export default GlobalStyle
+const GlobalStyleComposed = () => (
+  <>
+    <GlobalStyle />
+    <Helmet>
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+    </Helmet>
+  </>
+)
+
+export default GlobalStyleComposed
