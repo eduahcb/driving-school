@@ -133,7 +133,7 @@ Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   children: PropTypes.node,
   color: PropTypes.oneOf([...Object.values(colors)]),
-  variant: PropTypes.oneOf(...Object.values(variants)),
+  variant: PropTypes.oneOf([...Object.values(variants)]),
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool
 }
