@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { ThemeProvider as StyledProvider } from 'styled-components'
 
-const theme = {
+const light = {
   colors: {
     primary: {
       main: '#ffc107',
@@ -19,16 +19,37 @@ const theme = {
   }
 }
 
-const ThemeProvider = ({ children }) => (
-  <StyledProvider theme={theme}>{children}</StyledProvider>
+const allThemes = {
+  light,
+  ocean: {
+    ...light,
+    colors: {
+      ...light.colors,
+      primary: {
+        main: '#2196f3',
+        dark: '#1769aa',
+        light: '#4dabf5',
+        text: '#fff'
+      }
+    }
+  }
+
+}
+
+const ThemeProvider = ({ theme, children }) => (
+  <StyledProvider theme={allThemes[theme]}>{children}</StyledProvider>
 )
 
+ThemeProvider.themes = { light: 'light', ocean: 'ocean' }
+
 ThemeProvider.defaultProps = {
-  children: undefined
+  children: undefined,
+  theme: 'light'
 }
 
 ThemeProvider.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.node,
+  theme: PropTypes.string
 }
 
 export default ThemeProvider
