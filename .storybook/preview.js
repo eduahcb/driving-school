@@ -1,10 +1,13 @@
 
 import GlobalStyle from '../src/styles/GlobalStyle'
+import ThemeProvider from '../src/styles/ThemeProvider'
 
 const withGlobalStyle = (StoryFn) => (
   <>
     <GlobalStyle />
-    <StoryFn />
+    <ThemeProvider>
+      <StoryFn />
+    </ThemeProvider>
   </>
 )
 
