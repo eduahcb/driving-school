@@ -4,8 +4,8 @@ import ThemeProvider from '../src/styles/ThemeProvider'
 
 const withGlobalStyle = (StoryFn) => (
   <>
-    <GlobalStyle />
     <ThemeProvider>
+      <GlobalStyle />
       <StoryFn />
     </ThemeProvider>
   </>
@@ -48,7 +48,6 @@ const viewports = {
     }
   }
 }
-
 
 export const decorators = [withGlobalStyle]
 
