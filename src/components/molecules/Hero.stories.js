@@ -1,8 +1,8 @@
 import React from 'react'
 
-import Hero from 'components/Hero'
-import Heading from 'components/Heading'
-import Button from 'components/Button'
+import Hero from 'components/molecules/Hero'
+import Heading from 'components/atoms/Heading'
+import Button from 'components/atoms/Button'
 
 import StreetImage from 'stories/assets/street.jpg'
 import BgCarImage from 'stories/assets/bg-car.jpg'

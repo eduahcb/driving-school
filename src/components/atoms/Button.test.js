@@ -2,7 +2,7 @@ import React from 'react'
 
 import { render, screen } from 'test-utils'
 
-import Button from 'components/Button'
+import Button from 'components/atoms/Button'
 import { fireEvent } from '@testing-library/react'
 
 describe('Button', () => {

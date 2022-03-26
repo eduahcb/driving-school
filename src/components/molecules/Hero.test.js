@@ -1,7 +1,7 @@
 import React from 'react'
 import { render, screen } from 'test-utils'
 
-import Hero from 'components/Hero'
+import Hero from 'components/molecules/Hero'
 
 describe('Hero component', () => {
   test('should renders with children', () => {

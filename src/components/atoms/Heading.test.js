@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'test-utils'
 
-import Heading from 'components/Heading'
+import Heading from 'components/atoms/Heading'
 
 describe('Heading component', () => {
   test('match snapshot', () => {
