@@ -126,7 +126,8 @@ Button.defaultProps = {
   children: undefined,
   color: 'default',
   variant: 'default',
-  disabled: false
+  disabled: false,
+  onClick: undefined
 }
 
 Button.propTypes = {
@@ -134,7 +135,7 @@ Button.propTypes = {
   children: PropTypes.node,
   color: PropTypes.oneOf([...Object.values(colors)]),
   variant: PropTypes.oneOf([...Object.values(variants)]),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   disabled: PropTypes.bool
 }
 
