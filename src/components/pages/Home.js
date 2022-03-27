@@ -10,6 +10,7 @@ import Feature from 'components/atoms/Feature'
 import Section from 'components/molecules/Section'
 
 import HeroImage from 'assets/hero.jpg'
+import AboutVideo from 'assets/about.mp4'
 
 const Home = () => {
   return (
@@ -43,6 +44,32 @@ const Home = () => {
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit</p>
         </Feature>
       </Grid>
+    </Section>
+    <Section inverse>
+      <Heading>
+        <h2>Conheça nossos serviços</h2>
+      </Heading>
+    </Section>
+    <Section>
+      <Grid md={2}>
+        <div>
+          <Heading>
+            <h2>Driving School</h2>
+          </Heading>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim expedita natus labore quaerat, inventore</p>
+          <div>
+            <Button color="primary" >Saiba mais</Button>
+          </div>
+        </div>
+        <div>
+          <video src={AboutVideo} width="100%" autoPlay loop />
+        </div>
+      </Grid>
+    </Section>
+    <Section inverse>
+      <Heading>
+        <h2>Dúvidas recorrentes</h2>
+      </Heading>
     </Section>
   </>
   )
