@@ -15,7 +15,7 @@ describe('Home page', () => {
   test('test should click the button in the hero', () => {
     render(<Home />)
 
-    const button = screen.getByRole('button')
+    const button = screen.getByRole('button', { name: 'Matricula-se agora' })
 
     userEvent.click(button)
 
