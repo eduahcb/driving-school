@@ -4,7 +4,6 @@ import styled, { css } from 'styled-components'
 
 import Container from 'components/atoms/Container'
 
-
 const Content = styled.section`
   padding: 40px 0;
 
