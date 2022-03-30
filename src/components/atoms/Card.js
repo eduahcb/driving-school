@@ -5,6 +5,7 @@ import styled from 'styled-components'
 const Root = styled.div`
   background-color: #fff;
   border-radius: 4px;
+  overflow: hidden;
 `
 
 const Body = styled.div`
