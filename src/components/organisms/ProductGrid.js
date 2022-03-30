@@ -1,0 +1,75 @@
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+
+import Grid from 'components/atoms/Grid'
+import Card from 'components/atoms/Card'
+import Heading from 'components/atoms/Heading'
+import Button from 'components/atoms/Button'
+
+const Title = styled.h6`
+  margin-top: 0;
+`
+
+const Toolbar = styled.div`
+  margin-top: 40px;
+  text-align: center;
+
+  button {
+    text-transform: uppercase;
+  }
+`
+
+const ProductGrid = ({ products }) => {
+  const [showAll, setShowAll] = useState(false)
+
+  const filteredProducts = showAll ? products : products.slice(0, 3)
+
+  return (
+    <>
+      <Grid md={3} >
+        {filteredProducts.map((product) => (
+          <Card key={product.id}>
+            <Card.Image image={product.image} />
+            <Card.Body>
+              <Heading>
+                <Title>{ product.title }</Title>
+              </Heading>
+              <p>{product.summary}</p>
+              <div>
+                <Button variant={Button.variants.link} color={Button.colors.primary}>saiba mais</Button>
+              </div>
+            </Card.Body>
+          </Card>
+        ))}
+      </Grid>
+      {
+        !showAll && (
+          <Toolbar>
+            <Button
+              variant={Button.variants.outlined}
+              onClick={ () => setShowAll(true)}
+            >
+              lista completa de serviços
+            </Button>
+          </Toolbar>
+        )
+      }
+    </>
+  )
+}
+
+ProductGrid.defaultProps = {
+  products: []
+}
+
+ProductGrid.propTypes = {
+  products: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    image: PropTypes.string,
+    title: PropTypes.string,
+    summary: PropTypes.string
+  }))
+}
+
+export default ProductGrid
