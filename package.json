@@ -18,7 +18,8 @@
     "cov": "yarn test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "chromatic": "chromatic --project-token=99c2726c0748"
   },
   "eslintConfig": {
     "extends": [
@@ -70,6 +71,7 @@
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
     "@testing-library/react-hooks": "^7.0.2",
+    "chromatic": "^6.5.3",
     "eslint": "^7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "^2.22.1",
