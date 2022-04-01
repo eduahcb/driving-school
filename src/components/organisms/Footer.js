@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { FaPhone, FaBuilding, FaFacebook, FaLinkedin, FaTwitter } from 'react-icons/fa'
+import { FaPhone, FaBuilding } from 'react-icons/fa'
 
 import Container from 'components/atoms/Container'
 import Grid from 'components/atoms/Grid'
 import Heading from 'components/atoms/Heading'
+import useSocialMedia from 'hooks/useSocialMedia'
 
 const Root = styled.footer`
   background-color: #2a2a2a;
@@ -34,28 +35,9 @@ const FooterLink = styled.a`
 `
 
 const Footer = () => {
-  const socialMediaLinks = () => {
-    const socialMedias = [
-      {
-        id: 1,
-        icon: <FaFacebook />,
-        link: 'https://pt-br.facebook.com/',
-        text: 'facebook'
-      },
-      {
-        id: 2,
-        icon: <FaLinkedin />,
-        link: 'https://br.linkedin.com/',
-        text: 'linkedin'
-      },
-      {
-        id: 3,
-        icon: <FaTwitter />,
-        link: 'https://twitter.com/eduahcb',
-        text: 'twitter'
-      }
-    ]
+  const socialMedias = useSocialMedia()
 
+  const socialMediaLinks = (socialMedias) => {
     return (
       <>
         { socialMedias.map(socialMedia => (
@@ -102,7 +84,7 @@ const Footer = () => {
           <div>
             <Heading>
               <h6>Redes Sociais</h6>
-              {socialMediaLinks()}
+              {socialMediaLinks(socialMedias)}
             </Heading>
           </div>
         </Grid>
