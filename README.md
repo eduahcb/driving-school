@@ -1,5 +1,8 @@
 # Getting Started with Create React App
 
+
+![Code Climate maintainability](https://img.shields.io/codeclimate/maintainability/eduahcb/driving-school?style=for-the-badge)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
