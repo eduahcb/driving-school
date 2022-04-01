@@ -34,6 +34,44 @@ const FooterLink = styled.a`
 `
 
 const Footer = () => {
+  const socialMediaLinks = () => {
+    const socialMedias = [
+      {
+        id: 1,
+        icon: <FaFacebook />,
+        link: 'https://pt-br.facebook.com/',
+        text: 'facebook'
+      },
+      {
+        id: 2,
+        icon: <FaLinkedin />,
+        link: 'https://br.linkedin.com/',
+        text: 'linkedin'
+      },
+      {
+        id: 3,
+        icon: <FaTwitter />,
+        link: 'https://twitter.com/eduahcb',
+        text: 'twitter'
+      }
+    ]
+
+    return (
+      <>
+        { socialMedias.map(socialMedia => (
+          <p key={socialMedia.id}>
+                <FooterLink target="_blank" rel='noopener' href={socialMedia.link} >
+                  <IconContainer>
+                    {socialMedia.icon}
+                  </IconContainer>
+                  {socialMedia.text}
+                </FooterLink>
+              </p>
+        ))}
+      </>
+    )
+  }
+
   return (
     <Root>
       <Container>
@@ -64,30 +102,7 @@ const Footer = () => {
           <div>
             <Heading>
               <h6>Redes Sociais</h6>
-              <p>
-                <FooterLink target="_blank" rel='noopener' href='https://pt-br.facebook.com/' >
-                  <IconContainer>
-                    <FaFacebook />
-                  </IconContainer>
-                  facebook
-                </FooterLink>
-              </p>
-              <p>
-                <FooterLink target="_blank" rel='noopener' href='https://br.linkedin.com/' >
-                  <IconContainer>
-                    <FaLinkedin />
-                  </IconContainer>
-                  linkedin
-                </FooterLink>
-              </p>
-              <p>
-                <FooterLink target="_blank" rel='noopener' href='https://twitter.com/eduahcb' >
-                  <IconContainer>
-                    <FaTwitter />
-                  </IconContainer>
-                  twitter
-                </FooterLink>
-              </p>
+              {socialMediaLinks()}
             </Heading>
           </div>
         </Grid>

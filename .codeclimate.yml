@@ -1,4 +1,8 @@
 version: "2"  # required to adjust maintainability checks
+plugins:
+  eslint:
+    enabled: true
+    channel: "eslint-7"
 checks:
   argument-count:
     config:
@@ -30,7 +34,6 @@ checks:
   identical-code:
     config:
       threshold: # language-specific defaults. an override will affect all languages.
-
 exclude_patterns:
   - "**/node_modules/"
   - "**/*.test.js"
