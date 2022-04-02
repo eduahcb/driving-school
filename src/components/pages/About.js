@@ -3,11 +3,18 @@ import styled from 'styled-components'
 
 import Heading from 'components/atoms/Heading'
 import Grid from 'components/atoms/Grid'
+import Card from 'components/atoms/Card'
 import Hero from 'components/molecules/Hero'
 import Section from 'components/molecules/Section'
 import Footer from 'components/organisms/Footer'
 
 import HeroImage from 'assets/hero.jpg'
+import InstImage1 from 'assets/instructors/inst1.jpg'
+import InstImage2 from 'assets/instructors/inst2.jpg'
+import InstImage3 from 'assets/instructors/inst3.jpg'
+import InstImage4 from 'assets/instructors/inst4.jpg'
+import InstImage5 from 'assets/instructors/inst5.jpg'
+import InstImage6 from 'assets/instructors/inst6.jpg'
 import AboutSVG from 'draws/About'
 
 const ImageContainer = styled.div`
@@ -22,6 +29,15 @@ const ImageContainer = styled.div`
 `
 
 const About = () => {
+  const instructors = [
+    { id: 1, name: 'Thor', avatar: InstImage1 },
+    { id: 2, name: 'Mel', avatar: InstImage2 },
+    { id: 3, name: 'Bolinha', avatar: InstImage3 },
+    { id: 4, name: 'Mike', avatar: InstImage4 },
+    { id: 5, name: 'Emmy', avatar: InstImage5 },
+    { id: 6, name: 'Bob', avatar: InstImage6 }
+  ]
+
   return (
     <>
       <Hero image={HeroImage}>
@@ -67,6 +83,19 @@ const About = () => {
         <Heading>
           <h2>Conheça nossos professores</h2>
         </Heading>
+        <Grid sm={2} md={3} lg={4}>
+          {
+            instructors.map((instructor) => (
+              <Card key={instructor.id}>
+                <Card.Image image={instructor.avatar}>
+                  <Card.ImageDescription>
+                    <h5>{instructor.name}</h5>
+                  </Card.ImageDescription>
+                </Card.Image>
+              </Card>
+            ))
+          }
+        </Grid>
       </Section>
       <Footer />
     </>
