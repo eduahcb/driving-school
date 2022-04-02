@@ -65,15 +65,15 @@ jobs:
           name: "Run build"
           command: yarn build
     
-    versioning:
-      <<: *defaults
+  versioning:
+    <<: *defaults
     
-      steps:
-        - checkout
+    steps:
+      - checkout
 
-        - run:
-            name: 'Check package version'
-            command: node scripts/check-version eduahcb driving-school
+      - run:
+          name: 'Check package version'
+          command: node scripts/check-version eduahcb driving-school
 workflows:
   ci:
     jobs:
