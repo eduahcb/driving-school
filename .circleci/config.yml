@@ -108,3 +108,4 @@ workflows:
               ignore: master
             tags:
               ignore: /.*/
+      - chromatic
