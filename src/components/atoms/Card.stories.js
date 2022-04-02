@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Card, { CardBody, CardImage } from 'components/atoms/Card'
+import Card, { CardBody, CardImage, CardImageDescription } from 'components/atoms/Card'
 import Heading from 'components/atoms/Heading'
 import Button from 'components/atoms/Button'
 import Section from 'components/molecules/Section'
@@ -15,7 +15,7 @@ const Title = styled.h6`
 export default {
   title: 'Components/Card',
   component: Card,
-  subcomponents: { CardBody, CardImage }
+  subcomponents: { CardBody, CardImage, CardImageDescription }
 }
 
 export const usage = ({ title }) => (
@@ -57,4 +57,20 @@ export const withImage = ({ title }) => (
 
 withImage.args = {
   title: 'Título'
+}
+
+export const onlyImage = ({ description }) => (
+  <Section inverse>
+    <Card>
+      <Card.Image image={Image}>
+        <Card.ImageDescription>
+          <h5>{ description }</h5>
+        </Card.ImageDescription>
+      </Card.Image>
+    </Card>
+  </Section>
+)
+
+onlyImage.args = {
+  description: 'Descrição da imagem'
 }
