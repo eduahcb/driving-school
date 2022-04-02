@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@5.0.2
+  node: circleci/node@5.0.0
   codecov: codecov/codecov@3.2.2
 
 defaults: &defaults
@@ -35,6 +35,7 @@ jobs:
           name: "Run lint"
           command: yarn lint
 
+
   test:
     <<: *defaults
 
@@ -43,6 +44,10 @@ jobs:
 
       - node/install-packages:
           pkg-manager: yarn
+
+      - run:
+          name: "Run migrations"
+          command: yarn typeorm migration:run
               
       - run:
           name: "Run test"
@@ -50,24 +55,23 @@ jobs:
 
       - codecov/upload:
           file: coverage/*.json
+          
+  build:
+    <<: *defaults
+    
+    steps:
+      - checkout
+      
+      - node/install-packages:
+          pkg-manager: yarn
 
-    build:
-      <<: *defaults
-
-      steps:
-        - checkout
-
-        - node/install-packages:
-            pkg-manager: yarn  
-        
-        - run:
-            name: "Run build"
-            command: yarn build
-
+      - run:
+          name: "Run build"
+          command: yarn build
 workflows:
   ci:
     jobs:
-      - build
+      - setup
       - lint:
           requires:
             - setup
@@ -77,3 +81,5 @@ workflows:
       - build:
           requires:
             - setup
+            - test
+            - lint
