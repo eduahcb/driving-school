@@ -64,6 +64,16 @@ jobs:
       - run:
           name: "Run build"
           command: yarn build
+    
+  versioning:
+    <<: *defaults
+    
+    steps:
+      - checkout
+
+      - run:
+          name: 'Check package version'
+          command: node scripts/check-version eduahcb driving-school
 workflows:
   ci:
     jobs:
@@ -79,3 +89,9 @@ workflows:
             - setup
             - test
             - lint
+      - versioning:
+          filters:
+            branches:
+              ignore: master
+            tags:
+              ignore: /.*/

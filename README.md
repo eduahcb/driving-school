@@ -20,8 +20,8 @@
 
   <div display="inline-block" style="margin: 0 10px;">
 
-  ![CircleCI](https://img.shields.io/circleci/build/github/eduahcb/driving-school?style=for-the-badge) 
-  
+  ![CircleCI](https://img.shields.io/circleci/build/github/eduahcb/driving-school?style=for-the-badge)
+
   </div>
 
   <div display="inline-block" style="margin: 0 10px;">
