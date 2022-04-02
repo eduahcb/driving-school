@@ -74,6 +74,19 @@ jobs:
       - run:
           name: 'Check package version'
           command: node scripts/check-version eduahcb driving-school
+  chromatic:
+    <<: *defaults
+    
+    steps:
+      - checkout
+
+      - node/install-packages:
+          pkg-manager: yarn
+
+      - run:
+          name: "Chromatic"
+          command: yarn chromatic --project-token=${CHROMATIC_TOKEN}
+
 workflows:
   ci:
     jobs:
@@ -95,3 +108,4 @@ workflows:
               ignore: master
             tags:
               ignore: /.*/
+      - chromatic
