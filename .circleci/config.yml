@@ -44,10 +44,6 @@ jobs:
 
       - node/install-packages:
           pkg-manager: yarn
-
-      - run:
-          name: "Run migrations"
-          command: yarn typeorm migration:run
               
       - run:
           name: "Run test"
