@@ -14,24 +14,54 @@ const Body = styled.div`
 `
 
 const Image = styled.div`
+  display: flex;
   background: url(${props => props.image});
   background-position: center center ;
   background-size: cover;
   height: 270px;
 `
 
-export const CardImage = ({ image }) => <Image image={image} />
+const ImageDescription = styled.div`
+  background-color: rgba(0,0,0, 0.4);
+  flex: 1;
+  padding: 8px 16px;
+  color: #fff;
+  align-self: flex-end;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+`
+
+export const CardImage = ({ image, children }) => <Image image={image}>{children}</Image>
+
+export const CardImageDescription = ({ children }) => (
+  <ImageDescription>
+    {children}
+  </ImageDescription>
+)
 
 export const CardBody = ({ children }) => <Body>{children}</Body>
 
 const Card = ({ children }) => <Root>{children}</Root>
 
 CardImage.defaultProps = {
-  image: ''
+  image: '',
+  children: undefined
 }
 
 CardImage.propTypes = {
-  image: PropTypes.string
+  image: PropTypes.string,
+  children: PropTypes.node
+}
+
+CardImageDescription.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
 CardBody.propTypes = {
@@ -45,5 +75,7 @@ Card.propTypes = {
 Card.Body = CardBody
 
 Card.Image = CardImage
+
+Card.ImageDescription = CardImageDescription
 
 export default Card
