@@ -6,6 +6,7 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:testing-library/react",
         "standard"
     ],
     "parserOptions": {
