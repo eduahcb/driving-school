@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Heading from 'components/atoms/Heading'
 import Grid from 'components/atoms/Grid'
 import Card from 'components/atoms/Card'
+import BreadCrumb from 'components/atoms/BreadCrumb'
 import Hero from 'components/molecules/Hero'
 import Section from 'components/molecules/Section'
 import Footer from 'components/organisms/Footer'
@@ -44,6 +45,10 @@ const About = () => {
         <Heading>
           <h1>Driving School</h1>
         </Heading>
+        <BreadCrumb items={[
+          { id: 1, label: 'Início', link: '/' },
+          { id: 2, label: 'Sobre', link: '/sobre' }
+        ]} />
       </Hero>
       <Section>
         <Grid md={2}>
