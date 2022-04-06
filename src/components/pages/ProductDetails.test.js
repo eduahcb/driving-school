@@ -7,6 +7,6 @@ describe('ProductDetails page', () => {
   test('renders the heading', () => {
     render(<ProductDetails />)
 
-    expect(screen.getByText('Nome do Serviço'))
+    expect(screen.getAllByText('Nome do Serviço'))
   })
 })

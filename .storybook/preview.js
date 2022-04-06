@@ -1,12 +1,15 @@
 
 import GlobalStyle from '../src/styles/GlobalStyle'
 import ThemeProvider from '../src/styles/ThemeProvider'
+import { MemoryRouter } from 'react-router-dom'
 
 const withGlobalStyle = (StoryFn) => (
   <>
     <ThemeProvider>
       <GlobalStyle />
-      <StoryFn />
+      <MemoryRouter>
+        <StoryFn />
+      </MemoryRouter>
     </ThemeProvider>
   </>
 )

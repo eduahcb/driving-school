@@ -6,6 +6,7 @@
     },
     "extends": [
         "plugin:react/recommended",
+        "plugin:testing-library/react",
         "standard"
     ],
     "parserOptions": {
@@ -16,7 +17,9 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "jest-dom",
+        "testing-library"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off"

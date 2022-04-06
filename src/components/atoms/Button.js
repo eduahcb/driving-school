@@ -54,13 +54,15 @@ const StyledButton = styled.button`
   background-color: ${getMainColor};
   border: 2px solid ${getMainColor};
   color: ${getTextColor};
+  display: inline-block;
+  text-decoration: none;
 
   &:disabled {
     opacity: 0.6;
     cursor: not-allowed;
   }
 
-  &:hover:enabled {
+  &:hover:not(:disabled) {
     background-color: ${getDarkColor};
     border-color: ${getDarkColor};
   }
@@ -70,7 +72,7 @@ const StyledButtonOutlined = styled(StyledButton)`
   background-color: transparent;
   color: ${getOutlinedText};
 
-  &:hover:enabled {
+  &:hover:not(:disabled) {
     background-color: transparent ;
     color: ${getDarkColor}
   }
@@ -83,7 +85,7 @@ const StyledButtonLink = styled(StyledButton)`
   padding-left: 0;
   padding-right: 0;
 
-  &:hover:enabled {
+  &:hover:not(:disabled) {
     background-color: transparent;
     border-color: transparent;
     color: ${getDarkColor};
@@ -102,17 +104,17 @@ const variants = {
   link: 'link'
 }
 
-const Button = ({ type, children, color, variant, onClick, disabled }) => {
+const Button = (props) => {
   const buttonsTypes = [
       // eslint-disable-next-line react/jsx-key
-      <StyledButton onClick={onClick} type={type} color={color} disabled={disabled} >{children}</StyledButton>,
+      <StyledButton {...props} />,
       // eslint-disable-next-line react/jsx-key
-      <StyledButtonOutlined onClick={onClick} type={type} color={color} disabled={disabled} >{children}</StyledButtonOutlined>,
+      <StyledButtonOutlined {...props} />,
       // eslint-disable-next-line react/jsx-key
-      <StyledButtonLink onClick={onClick} type={type} color={color} disabled={disabled} >{children}</StyledButtonLink>
+      <StyledButtonLink { ...props } />
   ]
 
-  const index = { default: 0, outlined: 1, link: 2 }[variant]
+  const index = { default: 0, outlined: 1, link: 2 }[props.variant]
 
   return buttonsTypes[index]
 }
