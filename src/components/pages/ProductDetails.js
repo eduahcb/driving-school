@@ -5,6 +5,7 @@ import { FaIdCard, FaHome, FaScroll } from 'react-icons/fa'
 import Heading from 'components/atoms/Heading'
 import Callout from 'components/atoms/Callout'
 import Button from 'components/atoms/Button'
+import BreadCrumb from 'components/atoms/BreadCrumb'
 import Hero from 'components/molecules/Hero'
 import Section from 'components/molecules/Section'
 import Footer from 'components/organisms/Footer'
@@ -37,6 +38,11 @@ const ProductDetails = () => {
         <Heading>
           <h1>Nome do Serviço</h1>
         </Heading>
+        <BreadCrumb items={[
+          { id: 1, label: 'Início', link: '/' },
+          { id: 2, label: 'Serviços', link: '/' },
+          { id: 3, label: 'Nome do Serviço', link: '/' }
+        ]} />
       </Hero>
       <Section>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam at optio iusto eos earum eligendi quo libero aut perspiciatis, magni odio repellendus dignissimos commodi neque iure! Inventore eaque quod nulla.</p>
