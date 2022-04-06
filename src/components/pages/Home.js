@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import { FaCar, FaKey, FaMap, FaAccessibleIcon } from 'react-icons/fa'
 
@@ -70,7 +71,7 @@ const Home = () => {
         <li>Et doloremque nesciunt sint animi placeat molestiae suscipit.</li>
         <li>Nemo similique adipisci inventore voluptatum at. Dolorem ullam</li>
       </ul>
-      <Button variant={Button.variants.outlined} color={Button.colors.primary} onClick={ () => {}} >Matricula-se agora</Button>
+      <Button variant={Button.variants.outlined} color={Button.colors.primary}>Matricula-se agora</Button>
     </Hero>
     <Section>
       <Grid sm={2} md={4}>
@@ -105,7 +106,7 @@ const Home = () => {
           </Heading>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim expedita natus labore quaerat, inventore</p>
           <div>
-            <Button color="primary" >Saiba mais</Button>
+            <Button as={Link} to='/sobre' color="primary">saiba mais</Button>
           </div>
         </div>
         <div>
