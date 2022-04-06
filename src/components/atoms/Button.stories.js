@@ -15,53 +15,37 @@ const Toolbar = styled.div`
   }
 `
 
-export const usage = () => (
+const ButtonWrapper = (props) => (
   <div>
     <p>Enabled:</p>
     <Toolbar>
-      <Button onClick={action('clicked')}>Default</Button>
-      <Button onClick={action('clicked')} color="primary">Primary</Button>
-      <Button onClick={action('clicked')} color="danger">Danger</Button>
+      <Button onClick={action('clicked')} {...props} >Default</Button>
+      <Button onClick={action('clicked')} color="primary" {...props}>Primary</Button>
+      <Button onClick={action('clicked')} color="danger" {...props}>Danger</Button>
+    </Toolbar>
+    <p>As a link</p>
+    <Toolbar>
+      <Button as="a" href="#" onClick={action('clicked')} {...props} >Default</Button>
+      <Button as="a" href="#" onClick={action('clicked')} color="primary" {...props}>Primary</Button>
+      <Button as="a" href="#" onClick={action('clicked')} color="danger" {...props}>Danger</Button>
     </Toolbar>
     <p>Disabled:</p>
     <Toolbar>
-      <Button disabled onClick={action('clicked')}>Default</Button>
-      <Button disabled onClick={action('clicked')} color="primary">Primary</Button>
-      <Button disabled onClick={action('clicked')} color="danger">Danger</Button>
+      <Button disabled onClick={action('clicked')} {...props} >Default</Button>
+      <Button disabled onClick={action('clicked')} color="primary" {...props} >Primary</Button>
+      <Button disabled onClick={action('clicked')} color="danger" {...props} >Danger</Button>
     </Toolbar>
   </div>
+)
+
+export const usage = () => (
+  <ButtonWrapper />
 )
 
 export const outlined = () => (
-  <div>
-    <p>Enabled:</p>
-    <Toolbar>
-      <Button variant="outlined" onClick={action('clicked')}>Default</Button>
-      <Button variant="outlined" onClick={action('clicked')} color="primary">Primary</Button>
-      <Button variant="outlined" onClick={action('clicked')} color="danger">Danger</Button>
-    </Toolbar>
-    <p>Disabled:</p>
-    <Toolbar>
-      <Button variant="outlined" disabled onClick={action('clicked')}>Default</Button>
-      <Button variant="outlined"disabled onClick={action('clicked')} color="primary">Primary</Button>
-      <Button variant='outlined' disabled onClick={action('clicked')} color="danger">Danger</Button>
-    </Toolbar>
-  </div>
+  <ButtonWrapper variant="outlined" />
 )
 
 export const link = () => (
-  <div>
-    <p>Enabled:</p>
-    <Toolbar>
-      <Button variant="link" onClick={action('clicked')}>Default</Button>
-      <Button variant="link" onClick={action('clicked')} color="primary">Primary</Button>
-      <Button variant="link" onClick={action('clicked')} color="danger">Danger</Button>
-    </Toolbar>
-    <p>Disabled:</p>
-    <Toolbar>
-      <Button variant="link" disabled onClick={action('clicked')}>Default</Button>
-      <Button variant="link"disabled onClick={action('clicked')} color="primary">Primary</Button>
-      <Button variant='link' disabled onClick={action('clicked')} color="danger">Danger</Button>
-    </Toolbar>
-  </div>
+  <ButtonWrapper variant="link" />
 )
