@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+
 import { FaIdCard, FaHome, FaScroll } from 'react-icons/fa'
 
 import Heading from 'components/atoms/Heading'
@@ -12,6 +13,7 @@ import Footer from 'components/organisms/Footer'
 
 import HeroImage from 'assets/hero.jpg'
 import SpeedSVG from 'draws/Speed'
+import ProductType from 'models/types/ProductType'
 
 const PinnedList = styled.ul`
   list-style: none;
@@ -31,17 +33,17 @@ const PinnedItem = styled.li`
   }
 `
 
-const ProductDetails = () => {
+const ProductDetails = ({ product }) => {
   return (
     <>
       <Hero image={HeroImage}>
         <Heading>
-          <h1>Nome do Serviço</h1>
+          <h1>{product.title}</h1>
         </Heading>
         <BreadCrumb items={[
           { id: 1, label: 'Início', link: '/' },
           { id: 2, label: 'Serviços', link: '/' },
-          { id: 3, label: 'Nome do Serviço', link: '/' }
+          { id: 3, label: `${product.title}`, link: '/' }
         ]} />
       </Hero>
       <Section>
@@ -87,8 +89,8 @@ const ProductDetails = () => {
   )
 }
 
-ProductDetails.defaultProps = {}
-
-ProductDetails.propTypes = {}
+ProductDetails.propTypes = {
+  product: ProductType
+}
 
 export default ProductDetails
