@@ -1,6 +1,6 @@
 {
   "name": "driving-school",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "dependencies": {
     "@faker-js/faker": "^6.1.2",
