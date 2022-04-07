@@ -9,6 +9,8 @@ import Card from 'components/atoms/Card'
 import Heading from 'components/atoms/Heading'
 import Button from 'components/atoms/Button'
 
+import ProductType from 'models/types/ProductType'
+
 const Title = styled.h6`
   margin-top: 0;
 `
@@ -40,7 +42,11 @@ const ProductGrid = ({ products }) => {
                 </Heading>
                 <p>{product.summary}</p>
                 <div>
-                  <Button as={Link} to="/servicos" variant={Button.variants.link} color={Button.colors.primary}>saiba mais</Button>
+                  <Button
+                    as={Link}
+                    to={`/servicos/${product.slang}`}
+                    variant={Button.variants.link}
+                    color={Button.colors.primary}>saiba mais</Button>
                 </div>
               </Card.Body>
             </Card>
@@ -69,12 +75,7 @@ ProductGrid.defaultProps = {
 }
 
 ProductGrid.propTypes = {
-  products: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-    image: PropTypes.string,
-    title: PropTypes.string,
-    summary: PropTypes.string
-  }))
+  products: PropTypes.arrayOf(ProductType)
 }
 
 export default ProductGrid

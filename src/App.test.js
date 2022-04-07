@@ -33,5 +33,5 @@ test('renders /servicos routes', () => {
   const serviceLink = screen.getAllByRole('link', { name: 'saiba mais' })[0]
   userEvent.click(serviceLink)
 
-  expect(screen.getByRole('heading', { name: 'Nome do Serviço' })).toBeInTheDocument()
+  expect(screen.getByRole('heading', { name: '1ª Habilitação Carro e Moto' })).toBeInTheDocument()
 })
