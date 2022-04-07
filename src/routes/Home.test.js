@@ -1,13 +1,10 @@
 import React from 'react'
+import { render, screen } from 'test-utils'
 
-import { render, screen } from '@testing-library/react'
-
-import App from './App'
+import Home from 'routes/Home'
 
 test('renders call to action', () => {
-  render(
-    <App />
-  )
+  render(<Home />)
 
   expect(screen.getByText('Matricula-se agora')).toBeInTheDocument()
 })
