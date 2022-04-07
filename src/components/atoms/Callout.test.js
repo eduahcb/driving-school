@@ -21,7 +21,7 @@ describe('Callout component', () => {
   })
 
   test('renders the CalloutImage', () => {
-    const { container } = render(
+    render(
       <>
         <Callout>
             <Callout.Image>
@@ -31,7 +31,7 @@ describe('Callout component', () => {
       </>
     )
 
-    expect(container.querySelector('svg')).toBeInTheDocument()
+    expect(screen.getByTitle('Um OVNI abduzindo um alienígena')).toBeInTheDocument()
   })
 
   test('renders CalloutActions', () => {
